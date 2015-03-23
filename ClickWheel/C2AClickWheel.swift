@@ -79,42 +79,12 @@ import AudioToolbox
         centerButton.setTitle(self.titleLabel?.text, forState: .Normal)
         centerButton.titleLabel!.font =  self.titleLabel?.font
         centerButton.setTitleColor(self.titleColorForState(.Normal), forState: UIControlState.Normal)
+        centerButton.addTarget(nil, action: "centerClicked:", forControlEvents: .TouchUpInside)
 
         superview?.addSubview(centerButton)
 
     }
 
-
-    /*
-    override func layoutSubviews() {
-
-
-        println("layout Sub")
-
-        // add circular button to the center of the clickwheel
-
-        // instantiate a centerButton
-        let centerButton = C2ACircularButton()
-
-        // let centerButton have access to properties of clickWheel
-        centerButton.hostView = self
-
-        // calculate the size of the center button and display the button accordingly
-        centerButton.calculateButtonPosition(self.frame)
-
-        // set centerButton properties
-        centerButton.backgroundColor = .yellowColor()
-        centerButton.fillColor = buttonColor
-
-        // Button title
-        centerButton.setTitle(self.titleLabel?.text, forState: .Normal)
-        centerButton.titleLabel!.font =  UIFont(name: "HelveticaNeue-Light", size: centerButton.frame.width * 0.3)
-        centerButton.tintColor = .whiteColor()
-
-        superview?.addSubview(centerButton)
-
-    }
-*/
     override func drawRect(rect: CGRect) {
 
         //Define the center point of the view where you’ll rotate the arc around.

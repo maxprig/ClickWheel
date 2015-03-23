@@ -28,12 +28,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxq-ox-LLx" customClass="C2AClickWheel" customModule="ClickWheel" customModuleProvider="target">
-                                <rect key="frame" x="60" y="235" width="200" height="200"/>
+                                <rect key="frame" x="67" y="285" width="185" height="185"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Dsr-nl-ra4"/>
-                                    <constraint firstAttribute="height" constant="200" id="c0s-7Y-mow"/>
+                                    <constraint firstAttribute="width" constant="185" id="Dsr-nl-ra4"/>
+                                    <constraint firstAttribute="height" constant="185" id="c0s-7Y-mow"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="OK">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,7 +43,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="centerClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yHF-Tf-9qV"/>
                                     <action selector="clickWheelValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="LP1-x2-hVZ"/>
                                 </connections>
                             </button>
@@ -53,7 +52,7 @@
                             <constraint firstAttribute="centerX" secondItem="Vxq-ox-LLx" secondAttribute="centerX" id="KzC-pr-j0a"/>
                             <constraint firstAttribute="centerY" secondItem="3bO-FI-Cyq" secondAttribute="centerY" constant="171.5" id="Rje-O3-H08"/>
                             <constraint firstAttribute="centerX" secondItem="3bO-FI-Cyq" secondAttribute="centerX" constant="0.5" id="YSi-qg-EdS"/>
-                            <constraint firstAttribute="centerY" secondItem="Vxq-ox-LLx" secondAttribute="centerY" constant="-51" id="kNk-jX-FJB"/>
+                            <constraint firstAttribute="centerY" secondItem="Vxq-ox-LLx" secondAttribute="centerY" constant="-93.5" id="kNk-jX-FJB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -62,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377.60000000000002" y="304.82666666666665"/>
+            <point key="canvasLocation" x="377" y="304"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
