@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43D653441ABD68A2006EE040 /* C2ACircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D653431ABD68A2006EE040 /* C2ACircularButton.swift */; };
+		43D653461ABE2276006EE040 /* clickSound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43D653451ABE2276006EE040 /* clickSound1.mp3 */; };
+		43D653481ABE2425006EE040 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D653471ABE2425006EE040 /* AudioToolbox.framework */; };
+		43D9AD871ABAFD78001F97F7 /* C2AClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */; };
 		43EEFD7C1AB70145009D39B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFD7B1AB70145009D39B3 /* AppDelegate.swift */; };
 		43EEFD7E1AB70145009D39B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFD7D1AB70145009D39B3 /* ViewController.swift */; };
 		43EEFD811AB70145009D39B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EEFD7F1AB70145009D39B3 /* Main.storyboard */; };
 		43EEFD831AB70145009D39B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EEFD821AB70145009D39B3 /* Images.xcassets */; };
 		43EEFD861AB70145009D39B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43EEFD841AB70145009D39B3 /* LaunchScreen.xib */; };
 		43EEFD921AB70146009D39B3 /* ClickWheelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFD911AB70146009D39B3 /* ClickWheelTests.swift */; };
+		43EEFD9C1AB7015C009D39B3 /* AppNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 43EEFD9B1AB7015C009D39B3 /* AppNotes.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		435A14151AB8C7D400A3915C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		43D653431ABD68A2006EE040 /* C2ACircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2ACircularButton.swift; sourceTree = "<group>"; };
+		43D653451ABE2276006EE040 /* clickSound1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clickSound1.mp3; sourceTree = "<group>"; };
+		43D653471ABE2425006EE040 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2AClickWheel.swift; sourceTree = "<group>"; };
 		43EEFD761AB70145009D39B3 /* ClickWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EEFD7A1AB70145009D39B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43EEFD7B1AB70145009D39B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +46,7 @@
 		43EEFD8B1AB70145009D39B3 /* ClickWheelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClickWheelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EEFD901AB70146009D39B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43EEFD911AB70146009D39B3 /* ClickWheelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickWheelTests.swift; sourceTree = "<group>"; };
+		43EEFD9B1AB7015C009D39B3 /* AppNotes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = AppNotes.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D653481ABE2425006EE040 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,9 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43D653491ABE2456006EE040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43D653471ABE2425006EE040 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		43EEFD6D1AB70145009D39B3 = {
 			isa = PBXGroup;
 			children = (
+				435A14151AB8C7D400A3915C /* MyPlayground.playground */,
+				43EEFD9B1AB7015C009D39B3 /* AppNotes.rtf */,
 				43EEFD781AB70145009D39B3 /* ClickWheel */,
 				43EEFD8E1AB70146009D39B3 /* ClickWheelTests */,
 				43EEFD771AB70145009D39B3 /* Products */,
@@ -77,11 +99,9 @@
 		43EEFD781AB70145009D39B3 /* ClickWheel */ = {
 			isa = PBXGroup;
 			children = (
-				43EEFD7B1AB70145009D39B3 /* AppDelegate.swift */,
-				43EEFD7D1AB70145009D39B3 /* ViewController.swift */,
-				43EEFD7F1AB70145009D39B3 /* Main.storyboard */,
-				43EEFD821AB70145009D39B3 /* Images.xcassets */,
-				43EEFD841AB70145009D39B3 /* LaunchScreen.xib */,
+				43EEFD9F1AB70171009D39B3 /* Controller */,
+				43EEFD9E1AB7016A009D39B3 /* Views */,
+				43EEFD9D1AB70163009D39B3 /* Model */,
 				43EEFD791AB70145009D39B3 /* Supporting Files */,
 			);
 			path = ClickWheel;
@@ -90,6 +110,8 @@
 		43EEFD791AB70145009D39B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43D653491ABE2456006EE040 /* Frameworks */,
+				43D653451ABE2276006EE040 /* clickSound1.mp3 */,
 				43EEFD7A1AB70145009D39B3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +132,34 @@
 				43EEFD901AB70146009D39B3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43EEFD9D1AB70163009D39B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43EEFD7B1AB70145009D39B3 /* AppDelegate.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		43EEFD9E1AB7016A009D39B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43EEFD7F1AB70145009D39B3 /* Main.storyboard */,
+				43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */,
+				43D653431ABD68A2006EE040 /* C2ACircularButton.swift */,
+				43EEFD821AB70145009D39B3 /* Images.xcassets */,
+				43EEFD841AB70145009D39B3 /* LaunchScreen.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		43EEFD9F1AB70171009D39B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43EEFD7D1AB70145009D39B3 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +211,7 @@
 				TargetAttributes = {
 					43EEFD751AB70145009D39B3 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = TWL9GTP42W;
 					};
 					43EEFD8A1AB70145009D39B3 = {
 						CreatedOnToolsVersion = 6.3;
@@ -192,9 +243,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EEFD9C1AB7015C009D39B3 /* AppNotes.rtf in Resources */,
 				43EEFD811AB70145009D39B3 /* Main.storyboard in Resources */,
 				43EEFD861AB70145009D39B3 /* LaunchScreen.xib in Resources */,
 				43EEFD831AB70145009D39B3 /* Images.xcassets in Resources */,
+				43D653461ABE2276006EE040 /* clickSound1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D653441ABD68A2006EE040 /* C2ACircularButton.swift in Sources */,
 				43EEFD7E1AB70145009D39B3 /* ViewController.swift in Sources */,
 				43EEFD7C1AB70145009D39B3 /* AppDelegate.swift in Sources */,
+				43D9AD871ABAFD78001F97F7 /* C2AClickWheel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +327,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -316,6 +372,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -340,7 +397,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ClickWheel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -350,7 +409,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ClickWheel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +470,7 @@
 				43EEFD971AB70146009D39B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43EEFD981AB70146009D39B3 /* Build configuration list for PBXNativeTarget "ClickWheelTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +479,7 @@
 				43EEFD9A1AB70146009D39B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
