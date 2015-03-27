@@ -1,5 +1,5 @@
 # ClickWheel
-Drop-In ClickWheel for iOS 7.0+
+Drop-In ClickWheel for iOS 7.0+ written in Swift
 
 How to use the ClickWheel?
 
