@@ -38,7 +38,13 @@ import AudioToolbox
     // clockwise. Therefore a decreaseing angle will increase the counter
     // so dragging feel right to the user.
     
-    var angle: Int = 0
+    var angle: Int = 0 {
+        didSet{
+            if feedbackSound {
+                playClickSound()
+            }
+        }
+    }
 
     override var frame: CGRect {
         didSet {
@@ -51,6 +57,10 @@ import AudioToolbox
     
     // this gets set in lyoutSubview()
     var centerButton: UIButton?
+    
+    // sound properties
+    var soundURL: NSURL?
+    var soundID:SystemSoundID = 0
 
     // MARK: Lifecycle
     
@@ -89,7 +99,12 @@ import AudioToolbox
             centerButton!.setTitleColor(self.titleColorForState(.Normal), forState: UIControlState.Normal)
             centerButton!.addTarget(nil, action: "centerClicked:", forControlEvents: .TouchUpInside)
             
+            // put button on screen. You can't put a button on top of another button so, the
+            // center button is also added to the main view
             superview?.addSubview(centerButton!)
+            
+            // prepare sound playback
+            prepareSound()
         }
     }
 
@@ -147,9 +162,9 @@ import AudioToolbox
         let angleInt = Int(floor(currentAngle))
 
         //Store the new angle
-        angle = Int(360 - angleInt)
+        angle = angleInt // Int(360 - angleInt)
 
-        //Console out new value locally 
+        //Console out new value
 //        println("Dragging: \(angle)°")
 
         // send noctifications other other coan register for
@@ -171,6 +186,13 @@ import AudioToolbox
         return (result >= 0  ? result : result + 360.0);
     }
 
+    func orientationChanged() {
+        // re-calculate center button frame when screen roteated
+        if let button = centerButton {
+            button.frame = calculateButtonFrame()
+        }
+    }
+
     // MARK: Converters
     func DegreesToRadians (value:Double) -> Double {
         return value * M_PI / 180.0
@@ -182,16 +204,6 @@ import AudioToolbox
 
     func Square (value:CGFloat) -> CGFloat {
         return value * value
-    }
-
-    func playClickSound(){
-/*
-        let filePath = NSBundle.mainBundle().pathForResource("Tock", ofType: "caf")
-        let fileURL = NSURL(fileURLWithPath: filePath!)
-        var soundID:SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(fileURL, &soundID)
-        AudioServicesPlaySystemSound(soundID)
-*/
     }
 
     func calculateButtonFrame() ->CGRect{
@@ -216,14 +228,19 @@ import AudioToolbox
         // calculate square side length using Pythagoras' law
         return sqrt((pow(diagonal, 2.0) / 2))
     }
-
     
-    func orientationChanged() {
-        // re-calculate center button frame when screen roteated
-        if let button = centerButton {
-            button.frame = calculateButtonFrame()
-        }
+    //MARK: Sound
+    func prepareSound() {
+        let filePath = NSBundle.mainBundle().pathForResource("clickSound1", ofType: "mp3")
+        soundURL = NSURL(fileURLWithPath: filePath!)
         
     }
+    
+    func playClickSound(){
+        
+        AudioServicesCreateSystemSoundID(soundURL, &soundID)
+        AudioServicesPlaySystemSound(soundID)
+    }
+
 }
 
