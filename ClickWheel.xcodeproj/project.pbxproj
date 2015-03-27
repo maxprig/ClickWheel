@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43D653441ABD68A2006EE040 /* C2ACircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D653431ABD68A2006EE040 /* C2ACircularButton.swift */; };
 		43D653461ABE2276006EE040 /* clickSound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43D653451ABE2276006EE040 /* clickSound1.mp3 */; };
 		43D653481ABE2425006EE040 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D653471ABE2425006EE040 /* AudioToolbox.framework */; };
 		43D9AD871ABAFD78001F97F7 /* C2AClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */; };
@@ -32,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		435A14151AB8C7D400A3915C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		43D653431ABD68A2006EE040 /* C2ACircularButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2ACircularButton.swift; sourceTree = "<group>"; };
 		43D653451ABE2276006EE040 /* clickSound1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clickSound1.mp3; sourceTree = "<group>"; };
 		43D653471ABE2425006EE040 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2AClickWheel.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 			children = (
 				43EEFD7F1AB70145009D39B3 /* Main.storyboard */,
 				43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */,
-				43D653431ABD68A2006EE040 /* C2ACircularButton.swift */,
 				43EEFD821AB70145009D39B3 /* Images.xcassets */,
 				43EEFD841AB70145009D39B3 /* LaunchScreen.xib */,
 			);
@@ -265,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D653441ABD68A2006EE040 /* C2ACircularButton.swift in Sources */,
 				43EEFD7E1AB70145009D39B3 /* ViewController.swift in Sources */,
 				43EEFD7C1AB70145009D39B3 /* AppDelegate.swift in Sources */,
 				43D9AD871ABAFD78001F97F7 /* C2AClickWheel.swift in Sources */,

@@ -21,7 +21,6 @@ import AudioToolbox
     // Wheel Colors
     @IBInspectable var wheelColor: UIColor = UIColor.lightGrayColor()
     @IBInspectable var buttonColor: UIColor = UIColor.darkGrayColor()
-//    @IBInspectable var centerTitle: String = "OK"
 
     // Switch feedback sound on/off. False is the default for debugging only
     #if DEBUG
@@ -38,51 +37,60 @@ import AudioToolbox
     // a unitcircle. Also, in a unitcirlce the angle increases going counte-
     // clockwise. Therefore a decreaseing angle will increase the counter
     // so dragging feel right to the user.
-    var angle: Int = 0 {
+    
+    var angle: Int = 0
+
+    override var frame: CGRect {
         didSet {
-
-            // alter modulo for more or less momentum/precision
-            if angle % 5 == 0 {
-
-                if oldValue > angle {
-                    counter++
-                } else {
-                    counter--
-                }
-                if feedbackSound {
-                    playClickSound()
-                }
-            }
+            setNeedsDisplay()
         }
     }
-
+    
     // the value that will be eventually used
     var counter: Int = 0
+    
+    // this gets set in lyoutSubview()
+    var centerButton: UIButton?
 
     // MARK: Lifecycle
+    
+    override func layoutSubviews() {
+    /*************************************************************************************
+     Why is all layout work done here rathen than in awakeFromNib()?
+        
+     The main reason is that I wanted to properly support Auto Layout/Auto Size Classes.
+     Basically I'm creating a button programmatically on top of a button that got
+     created in Interface Builder. To correctly calculate size and position of the 
+     top (or center) button the exact size and position of its host (or wheel) button
+     is required. When Auto Layout/Auto Size Classes are used it is here where we get
+     proper values of the actual device/view. AwakeFromNib() will alway give you the
+     defaults from interface builder regardless of the actual device used.
+    *************************************************************************************/
+        
+        // as layoutSubView may get called multiple times check if button is
+        // nil before instantiating
+        if centerButton == nil {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-        // add circular button to the center of the clickwheel
-
-        // instantiate a centerButton
-        let centerButton = UIButton()
-
-        // calculate the size of the center button and display the button accordingly
-        centerButton.frame = calculateButtonPosition(self.frame)
-
-        // set centerButton properties
-        centerButton.backgroundColor = buttonColor
-
-        // Button title
-        centerButton.setTitle(self.titleLabel?.text, forState: .Normal)
-        centerButton.titleLabel!.font =  self.titleLabel?.font
-        centerButton.setTitleColor(self.titleColorForState(.Normal), forState: UIControlState.Normal)
-        centerButton.addTarget(nil, action: "centerClicked:", forControlEvents: .TouchUpInside)
-
-        superview?.addSubview(centerButton)
-
+            // sign up for orientation change notification
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
+            // add circular button to the center of the clickwheel
+            
+            // instantiate a centerButton
+            // calculate the size of the center button from the size of the wheel button
+            centerButton = UIButton(frame: calculateButtonFrame())
+            
+            // set centerButton properties
+            centerButton!.backgroundColor = buttonColor
+            
+            // Button title
+            centerButton!.setTitle(self.titleLabel?.text, forState: .Normal)
+            centerButton!.titleLabel!.font =  self.titleLabel?.font
+            centerButton!.setTitleColor(self.titleColorForState(.Normal), forState: UIControlState.Normal)
+            centerButton!.addTarget(nil, action: "centerClicked:", forControlEvents: .TouchUpInside)
+            
+            superview?.addSubview(centerButton!)
+        }
     }
 
     override func drawRect(rect: CGRect) {
@@ -142,7 +150,7 @@ import AudioToolbox
         angle = Int(360 - angleInt)
 
         //Console out new value locally 
- //       println("Dragging: \(angle)°")
+//        println("Dragging: \(angle)°")
 
         // send noctifications other other coan register for
         sendActionsForControlEvents(.ValueChanged)
@@ -186,19 +194,14 @@ import AudioToolbox
 */
     }
 
-    func calculateButtonPosition(hostRect: CGRect) ->CGRect{
-
-        println("Device: \(hostRect)")
-        println("Wheel Button: \(self.frame)")
+    func calculateButtonFrame() ->CGRect{
 
         let buttonWidth = calculateCenterButtonSize(self.frame.width, arcWidth: self.arcWidth)
 
-        let positionX = hostRect.origin.x + ((hostRect.width / 2) - (buttonWidth / 2))
-        let positionY = hostRect.origin.y + ((hostRect.width / 2) - (buttonWidth / 2))
-
+        let positionX = self.center.x - (buttonWidth / 2)
+        let positionY = self.center.y - (buttonWidth / 2)
+        
         let newFrame = CGRectMake(positionX, positionY, buttonWidth, buttonWidth)
-
-        println("Center Button \(newFrame)")
 
         return newFrame
     }
@@ -214,5 +217,13 @@ import AudioToolbox
         return sqrt((pow(diagonal, 2.0) / 2))
     }
 
+    
+    func orientationChanged() {
+        // re-calculate center button frame when screen roteated
+        if let button = centerButton {
+            button.frame = calculateButtonFrame()
+        }
+        
+    }
 }
 

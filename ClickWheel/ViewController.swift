@@ -12,13 +12,21 @@ class ViewController: UIViewController {
 
     //MARK: Properties
     @IBOutlet weak var label: UILabel!
+    var counter = 0
 
     //MARK: Action
     @IBAction func clickWheelValueChanged(sender: C2AClickWheel) {
         
-        label.text = "\(sender.counter)"
-
+        if sender.angle > counter {
+            label.text = "forward \(sender.angle)"
+            counter = sender.angle
+        } else {
+            label.text = "backward \(sender.angle)"
+            counter = sender.angle
+        }
     }
+    
+    // do NOT controll drag this methos to your button in Interface Builder
     @IBAction func centerClicked(sender: C2AClickWheel) {
 
         if label.text == "Clack!" {
@@ -28,11 +36,6 @@ class ViewController: UIViewController {
         }
     }
 
-    //MARK: LifeCycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 }
 
 
