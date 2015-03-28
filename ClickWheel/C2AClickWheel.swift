@@ -9,8 +9,6 @@
 import UIKit
 import AudioToolbox
 
-// !!!! DO NOT USE SIZE CLASSES IN INTERFACE BUILDER !!!!
-
 @IBDesignable class C2AClickWheel: UIButton {
 
     // MARK: Properties
