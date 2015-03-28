@@ -21,11 +21,7 @@ import AudioToolbox
     @IBInspectable var buttonColor: UIColor = UIColor.darkGrayColor()
 
     // Switch feedback sound on/off. False is the default for debugging only
-    #if DEBUG
     @IBInspectable var feedbackSound: Bool = false
-    #else
-    @IBInspectable var feedbackSound: Bool = true
-    #endif
 
     // Define the thickness of the arc.
     @IBInspectable var arcWidth: CGFloat = 50
@@ -38,6 +34,7 @@ import AudioToolbox
     
     var angle: Int = 0 {
         didSet{
+            
             if feedbackSound {
                 playClickSound()
             }
@@ -159,14 +156,18 @@ import AudioToolbox
         let currentAngle:Double = AngleFromNorth(centerPoint, p2: lastPoint, flipped: false);
         let angleInt = Int(floor(currentAngle))
 
-        //Store the new angle
-        angle = angleInt // Int(360 - angleInt)
+        // only update upon new value for less fuzzy results
+        if angleInt != angle {
+            //Store the new angle
+            angle = angleInt // Int(360 - angleInt)
 
-        //Console out new value
-//        println("Dragging: \(angle)°")
+            //Console out new value
+            println("Dragging: \(angle)°")
+            
+            // send noctifications other other coan register for
+            sendActionsForControlEvents(.ValueChanged)
+        }
 
-        // send noctifications other other coan register for
-        sendActionsForControlEvents(.ValueChanged)
 
         return true
     }
