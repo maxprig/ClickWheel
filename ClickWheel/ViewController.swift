@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     }
     
     // do NOT controll drag this methos to your button in Interface Builder
+    // do NOT change this method name unless you also change it in 
+    // C2AClickWheek.layoutSubviews()!!
     @IBAction func centerClicked(sender: C2AClickWheel) {
 
         if label.text == "Clack!" {
