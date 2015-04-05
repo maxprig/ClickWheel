@@ -36,7 +36,11 @@ import AudioToolbox
         didSet{
             
             if feedbackSound {
-                playClickSound()
+                // play click sound only every other time
+                if angle % 2 == 0 {
+                    playClickSound()
+                }
+
             }
         }
     }
@@ -230,7 +234,7 @@ import AudioToolbox
     
     //MARK: Sound
     func prepareSound() {
-        let filePath = NSBundle.mainBundle().pathForResource("clickSound1", ofType: "mp3")
+        let filePath = NSBundle.mainBundle().pathForResource("Click", ofType: "mp3")
         soundURL = NSURL(fileURLWithPath: filePath!)
         
     }

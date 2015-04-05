@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43D653461ABE2276006EE040 /* clickSound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43D653451ABE2276006EE040 /* clickSound1.mp3 */; };
+		438B2B731AD1406400E5551A /* Click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 438B2B721AD1406400E5551A /* Click.mp3 */; };
 		43D653481ABE2425006EE040 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D653471ABE2425006EE040 /* AudioToolbox.framework */; };
 		43D9AD871ABAFD78001F97F7 /* C2AClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */; };
 		43EEFD7C1AB70145009D39B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFD7B1AB70145009D39B3 /* AppDelegate.swift */; };
@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		43D653451ABE2276006EE040 /* clickSound1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clickSound1.mp3; sourceTree = "<group>"; };
+		438B2B721AD1406400E5551A /* Click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Click.mp3; sourceTree = "<group>"; };
 		43D653471ABE2425006EE040 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2AClickWheel.swift; sourceTree = "<group>"; };
 		43EEFD761AB70145009D39B3 /* ClickWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				43D653491ABE2456006EE040 /* Frameworks */,
-				43D653451ABE2276006EE040 /* clickSound1.mp3 */,
+				438B2B721AD1406400E5551A /* Click.mp3 */,
 				43EEFD7A1AB70145009D39B3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -238,7 +238,7 @@
 				43EEFD811AB70145009D39B3 /* Main.storyboard in Resources */,
 				43EEFD861AB70145009D39B3 /* LaunchScreen.xib in Resources */,
 				43EEFD831AB70145009D39B3 /* Images.xcassets in Resources */,
-				43D653461ABE2276006EE040 /* clickSound1.mp3 in Resources */,
+				438B2B731AD1406400E5551A /* Click.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
