@@ -185,7 +185,6 @@ import AudioToolbox
             sendActionsForControlEvents(.ValueChanged)
         }
 
-
         return true
     }
 
@@ -253,7 +252,7 @@ import AudioToolbox
             soundURL = NSURL(fileURLWithPath: fPath)
         }
     }
-    
+
     func playClickSound(){
         
         AudioServicesCreateSystemSoundID(soundURL, &soundID)
