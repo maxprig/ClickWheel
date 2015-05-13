@@ -5,7 +5,9 @@ ClickWheel basically consists of two buttons on top of each other. One is respon
 
 Like a real click wheel the outer wheel only responds to dragging while the inner button only responds to clicks (touch up inside). Upon dragging ClickWheel will provide the angle relative to its center point. 0/360 degree in the demo project is at the 3 o'Clock position as in an unit circle. In the demo project the angle is displayed in an UILabel along with an indication if dragging is done forward or backward.
 
-### How to use ClickWheel in your porject? Very easily!
+![](https://github.com/github/doertydoerk/ClickWheel/master/clickWheelScreenShot.png)
+
+### How to use ClickWheel in your porject? Very simple!
 
 - In Interface Builder pull out an UIButton to you ViewController and give it proper size and positioning. 
 - In the Identity Inspector make it of class C2AClickWheel
