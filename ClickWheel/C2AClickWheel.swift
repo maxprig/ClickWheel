@@ -124,10 +124,20 @@ import AudioToolbox
 
         // Create a path based on the center point, radius, and angles you just defined.
         var path = UIBezierPath(arcCenter: center,
-            radius: radius - arcWidth/2,
+            radius: (radius - arcWidth/2) - 2, // -2 to make room for drop shadows
             startAngle: startAngle,
             endAngle: endAngle,
             clockwise: true)
+
+        // these var's are used for both inner and outer ClickWheel shadows
+        let ctx = UIGraphicsGetCurrentContext()
+        let shadowOutside = UIColor.grayColor()
+        let shadowInside = UIColor.blackColor()
+        let shadowOffset = CGSizeMake(0.0, 0.3)   //(3.1, 3.1)
+        let shadowBlurRadius: CGFloat = 5.0
+
+        // add dropshadow to ClickWheel
+        CGContextSetShadowWithColor(ctx, shadowOffset, shadowBlurRadius,  (shadowOutside as UIColor).CGColor)
 
         // Set the line width and color before finally stroking the path.
         path.lineWidth = arcWidth
@@ -145,6 +155,9 @@ import AudioToolbox
             startAngle: startAngle,
             endAngle: endAngle,
             clockwise: true)
+
+        // add dropshadow to center button
+        CGContextSetShadowWithColor(ctx, shadowOffset, shadowBlurRadius,  (shadowInside as UIColor).CGColor)
 
         // set color for inner circle and fill path
         buttonColor.setFill()
@@ -235,8 +248,10 @@ import AudioToolbox
     //MARK: Sound
     func prepareSound() {
         let filePath = NSBundle.mainBundle().pathForResource("Click", ofType: "mp3")
-        soundURL = NSURL(fileURLWithPath: filePath!)
-        
+
+        if let fPath = filePath {
+            soundURL = NSURL(fileURLWithPath: fPath)
+        }
     }
     
     func playClickSound(){
