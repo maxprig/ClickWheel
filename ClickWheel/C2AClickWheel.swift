@@ -164,7 +164,7 @@ import AudioToolbox
         path.fill()
     }
 
-    override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent) -> Bool {
+    override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         let lastPoint = touch.locationInView(self)
 
         let centerPoint:CGPoint  = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
@@ -179,7 +179,7 @@ import AudioToolbox
             angle = angleInt // Int(360 - angleInt)
 
             //Console out new value
-            println("Dragging: \(angle)°")
+            print("Dragging: \(angle)°")
             
             // send noctifications other other coan register for
             sendActionsForControlEvents(.ValueChanged)
@@ -255,7 +255,7 @@ import AudioToolbox
 
     func playClickSound(){
         
-        AudioServicesCreateSystemSoundID(soundURL, &soundID)
+        AudioServicesCreateSystemSoundID(soundURL!, &soundID)
         AudioServicesPlaySystemSound(soundID)
     }
 

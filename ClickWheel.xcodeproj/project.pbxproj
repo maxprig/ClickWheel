@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		437125631B03F9CB0034C08B /* clickWheelScreenShot.png in Resources */ = {isa = PBXBuildFile; fileRef = 437125621B03F9CB0034C08B /* clickWheelScreenShot.png */; };
 		438B2B731AD1406400E5551A /* Click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 438B2B721AD1406400E5551A /* Click.mp3 */; };
 		43D653481ABE2425006EE040 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D653471ABE2425006EE040 /* AudioToolbox.framework */; };
 		43D9AD871ABAFD78001F97F7 /* C2AClickWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */; };
@@ -30,7 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		437125621B03F9CB0034C08B /* clickWheelScreenShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clickWheelScreenShot.png; sourceTree = "<group>"; };
 		438B2B721AD1406400E5551A /* Click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Click.mp3; sourceTree = "<group>"; };
 		43D653471ABE2425006EE040 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		43D9AD851ABAFD78001F97F7 /* C2AClickWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C2AClickWheel.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		43EEFD791AB70145009D39B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				437125621B03F9CB0034C08B /* clickWheelScreenShot.png */,
 				43D653491ABE2456006EE040 /* Frameworks */,
 				438B2B721AD1406400E5551A /* Click.mp3 */,
 				43EEFD7A1AB70145009D39B3 /* Info.plist */,
@@ -201,6 +198,8 @@
 		43EEFD6E1AB70145009D39B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "[code2app];";
 				TargetAttributes = {
@@ -239,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43EEFD811AB70145009D39B3 /* Main.storyboard in Resources */,
-				437125631B03F9CB0034C08B /* clickWheelScreenShot.png in Resources */,
 				43EEFD861AB70145009D39B3 /* LaunchScreen.xib in Resources */,
 				43EEFD831AB70145009D39B3 /* Images.xcassets in Resources */,
 				438B2B731AD1406400E5551A /* Click.mp3 in Resources */,
