@@ -9,7 +9,7 @@ Like a real click wheel the outer wheel only responds to dragging while the inne
 
 ![](https://github.com/doertydoerk/ClickWheel/blob/master/clickWheelScreenShot.png)
 
-### How to use ClickWheel in your porject? Very simple!
+### How to use ClickWheel in your project? Very simple!
 
 - In Interface Builder pull out an UIButton to you ViewController and give it proper size and positioning. 
 - In the Identity Inspector make it of class C2AClickWheel
